@@ -10,17 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: write  # позволяет пушить в ветку gh-pages
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
@@ -28,11 +27,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Sync with remote
-        run: git pull origin main --allow-unrelated-histories
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
