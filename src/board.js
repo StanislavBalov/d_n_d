@@ -62,4 +62,10 @@ export default class Board {
       });
     }
   }
+  export function createCard(text) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.textContent = text;
+    return card;
+  }
   
