@@ -1,6 +1,6 @@
 # Домашнее задание к занятию "6. Работа с файлами, DnD"
 
-![CI](https://github.com/StanislavBalov/d_n_d/actions/workflows/nodejs.yml/badge.svg)
+![CI](https://github.com/StanislavBalov/d_n_d/actions/workflows/pages.yml/badge.svg)
 
 Правила сдачи задания:
 
